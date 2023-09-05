@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example view | App</title>
-    <!-- Styles -->
+    <title>Examen diagnóstico | PWA</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="./assets/css/notyf.min.css">
@@ -19,65 +18,70 @@
 
 <body>
     <div class="container my-5">
-        <h1 id="lblGreeting" class="mb-3"></h1>
-        <div class="row">
-            <div class="col-4">
+        <h1 class="mb-3">Gestión de usuarios</h1>
+        <div class="row g-3">
+            <div class="col-md-5 col-lg-4">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="vstack gap-3">
-                            <h5 id="lblAction">Registrar usuario</h5>
+                            <h5 id="lblAction"></h5>
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="text" class="form-control" id="iptFirstName" placeholder="Nombre">
+                                <label for="iptFirstName">Nombre</label>
                             </div>
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="text" class="form-control" id="iptLastName" placeholder="Apellido">
+                                <label for="iptLastName">Apellido</label>
                             </div>
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="email" class="form-control" id="iptEmail" placeholder="Correo electrónico">
+                                <label for="iptEmail">Correo electrónico</label>
                             </div>
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="url" class="form-control" id="iptAvatar" placeholder="Avatar (URL)">
+                                <label for="iptAvatar">Avatar (URL)</label>
                             </div>
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                            <div class="row g-1 justify-content-end d-none" id="ctrDetailsOptions">
+                                <div class="col-auto">
+                                    <button class="btn btn-danger" type="button" onclick="deleteUser()">
+                                        <span class="d-none d-sm-inline d-md-none d-xl-inline me-2">Eliminar</span>
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary" type="button" onclick="updateUser()">
+                                        <span class="d-none d-sm-inline d-md-none d-xl-inline me-2">Actualizar</span>
+                                        <i class="fas fa-save"></i>
+                                    </button>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-secondary" type="button" onclick="showCreate()">
+                                        <span class="d-none d-sm-inline d-md-none d-xl-inline me-2">Cerrar</span>
+                                        <i class="fas fa-x"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div>
-                                div.
+                            <div class="row g-1 justify-content-end d-none" id="ctrRegisterOptions">
+                                <div class="col-auto">
+                                    <button class="btn btn-success" type="button" onclick="createUser()">
+                                        <span class="d-none d-sm-inline d-md-none d-xl-inline me-2">Registrar</span>
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-secondary" type="button" onclick="showCreate()">
+                                        <span class="d-none d-sm-inline d-md-none d-xl-inline me-2">Cancelar</span>
+                                        <i class="fas fa-x"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-md-7 col-lg-8">
                 <h3 class="mb-3">Listado:</h3>
-                <div class="row g-3">
-                    <div class="col-md-6 clickable" template="user">
-                        <div class="card shadow-sm">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <img src="${avatar}" class="img-fluid rounded-start h-100" alt="..." style="">
-                                </div>
-                                <div class="col p-3">
-                                    <div class="row">
-                                        <div class=""><b>ID:</b> ${id}</div>
-                                        <div class=""><b>Nombre:</b> ${first_name} ${last_name}</div>
-                                        <div class=""><b>Email:</b> ${id}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="row g-3" id="ctrUsers"></div>
             </div>
         </div>
     </div>
@@ -86,9 +90,8 @@
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/notyf.min.js"></script>
     <script src="./assets/js/sweetalert2.all.min.js"></script>
-    <script src="./assets//js/renderer.min.js"></script>
-    <script src="./app/app.js"></script>
     <script src="./app/services/user-service.js"></script>
+    <script src="./app/app.js"></script>
     <script src="./app/controllers/user-controller.js"></script>
 </body>
 
