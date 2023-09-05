@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example view | App</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./assets/css/notyf.min.css">
+    <link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
+    <style>
+        hr,h1,h2,h3,h4,h5,h6,p{margin: 0;}
+        .clickable{cursor: pointer;}
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 id="lblGreeting" class="mb-3"></h1>
+        <div class="row">
+            <div class="col-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="vstack gap-3">
+                            <h5 id="lblAction">Registrar usuario</h5>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div>
+                                div.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="mb-3">Listado:</h3>
+                <div class="row g-3">
+                    <div class="col-md-6 clickable" template="user">
+                        <div class="card shadow-sm">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <img src="${avatar}" class="img-fluid rounded-start h-100" alt="..." style="">
+                                </div>
+                                <div class="col p-3">
+                                    <div class="row">
+                                        <div class=""><b>ID:</b> ${id}</div>
+                                        <div class=""><b>Nombre:</b> ${first_name} ${last_name}</div>
+                                        <div class=""><b>Email:</b> ${id}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/notyf.min.js"></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
+    <script src="./assets//js/renderer.min.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/services/user-service.js"></script>
+    <script src="./app/controllers/user-controller.js"></script>
+</body>
+
+</html>
